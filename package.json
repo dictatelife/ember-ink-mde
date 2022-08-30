@@ -1,7 +1,7 @@
 {
   "name": "ember-ink-mde",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "an Ember.js addon for the Ink Markdown Editor",
   "keywords": [
     "ember-addon"
   ],
