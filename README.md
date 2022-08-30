@@ -26,6 +26,31 @@ ember install ember-ink-mde
 
 The configuration options match most of the configuation from ink-mde.
 
+- doc
+- beforeUpdate
+- afterUpdate
+- vim
+
+Nested options are prefixed with their top-level configuration key so they can be specified as properties on an Ember component:
+
+| interface             | toolbar                   |
+|-----------------------|---------------------------|
+| interfaceAttribution  | toolbarBold               |
+| interfaceAutocomplete | toolbarCode               |
+| interfaceImages       | toolbarCodeBlock          |
+| interfaceReadonly     | toolbarHeading            |
+| interfaceSpellcheck   | toolbarImage              |
+| interfaceToolbar      | toolbarItalic             |
+|                       | toolbarLink               |
+|                       | toolbarList               |
+|                       | toolbarOrderedList        |
+|                       | toolbarQuote              |
+|                       | toolbarTaskList           |
+|                       | toolbarUpload             |
+
+
+Note: The plugin does not yet support configuring the `file` options. Pull requests are welcomed.
+
 ###### templates/application.hbs
 
 ```hbs
