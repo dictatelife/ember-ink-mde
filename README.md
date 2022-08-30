@@ -1,7 +1,8 @@
 # ember-ink-mde
 
-[Short description of the addon.]
+**Currently locked at Ink version 0.10.0 due to compatibility issues with Ember and Solid.js**
 
+An [Ember.js](https://github.com/emberjs/ember.js/) addon for the [Ink Markdown Editor](https://github.com/voraciousdev/ink-mde/)
 
 ## Compatibility
 
@@ -11,8 +12,9 @@
 
 ## Requirements
 
-* [ember-auto-import >=2](https://github.com/ef4/ember-auto-import)
+* [ember-auto-import >= 2](https://github.com/ef4/ember-auto-import)
 
+Ember will throw an error if this requirement is not met.
 
 ## Installation
 
@@ -20,11 +22,18 @@
 ember install ember-ink-mde
 ```
 
-
 ## Usage
 
-[Longer description of how to use the addon in apps.]
+The configuration options match most of the configuation from ink-mde.
 
+###### templates/application.hbs
+
+```hbs
+{{ink-mde
+  doc="my awesome markdown content"
+  afterUpdate=(action afterEditorUpdate)
+}}
+```
 
 ## Contributing
 
