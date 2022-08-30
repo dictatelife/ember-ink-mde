@@ -1,4 +1,9 @@
-# ember-ink-mde
+<p align="center">
+  <a href="https://github.com/malgasm/ember-ink-mde/actions?query=workflow%3ACI"><img src="https://github.com/malgasm/ember-ink-mde/workflows/CI/badge.svg" alt="CI Status"></a>
+  <a href="https://codeclimate.com/github/malgasm/ember-ink-mde"><img src="https://codeclimate.com/github/malgasm/ember-ink-mde.svg" alt="Code Climate"></a>
+  <a href="https://github.com/malgasm/ember-ink-mde/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
+
+</p>
 
 **Currently locked at Ink version 0.10.0 due to compatibility issues with Ember and Solid.js**
 
