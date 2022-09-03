@@ -5,8 +5,6 @@
 
 </p>
 
-**Currently locked at Ink version 0.10.0 due to compatibility issues with Ember and Solid.js**
-
 An [Ember.js](https://github.com/emberjs/ember.js/) addon for the [Ink Markdown Editor](https://github.com/voraciousdev/ink-mde/)
 
 ## Compatibility
