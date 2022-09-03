@@ -4,6 +4,7 @@ import { render, find, findAll, typeIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 const poweredText = 'powered by ink-mde';
+const inkButtonClass = '.ink-button';
 
 // Set any properties with this.set('myProperty', 'value');
 // Handle any actions with this.set('myAction', function(val) { ... });
@@ -15,7 +16,7 @@ module('Integration | Component | ink-mde', function (hooks) {
     await render(hbs`<div><InkMde @doc="test" /></div>`);
 
     assert.strictEqual(find(".cm-content")?.textContent, `test${poweredText}`);
-    assert.strictEqual(findAll('.ink-toolbar-button').length, 0)
+    assert.strictEqual(findAll(inkButtonClass).length, 0)
   });
 
   test("it allows interface configuration", async function (assert) {
@@ -30,7 +31,7 @@ module('Integration | Component | ink-mde', function (hooks) {
     /></div>`);
 
     assert.strictEqual(find(".cm-content")?.textContent, `interface`);
-    assert.strictEqual(findAll('.ink-toolbar-button').length, 11)
+    assert.strictEqual(findAll(inkButtonClass).length, 11)
   });
 
   test("it allows toolbar configuration", async function (assert) {
@@ -50,7 +51,7 @@ module('Integration | Component | ink-mde', function (hooks) {
       @toolbarTaskList={{false}}
     /></div>`);
 
-    assert.strictEqual(findAll('.ink-toolbar-button').length, 1)
+    assert.strictEqual(findAll(inkButtonClass).length, 1)
   });
 
   test("it calls hooks", async function (assert) {
