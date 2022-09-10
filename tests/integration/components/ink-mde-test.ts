@@ -55,12 +55,18 @@ module('Integration | Component | ink-mde', function (hooks) {
   });
 
   test("it calls hooks", async function (assert) {
-    this.set('afterUpdate', function(content) {
-      document.getElementById('after').innerText = "afterUpdate" + content;
+    this.set('afterUpdate', function(content : string) {
+      const afterEl = document.getElementById('after');
+      if (afterEl) {
+        afterEl.innerText = "afterUpdate" + content;
+      }
     });
 
-    this.set('beforeUpdate', function(content) {
-      document.getElementById('before').innerText = "beforeUpdate" + content;
+    this.set('beforeUpdate', function(content : string) {
+      const beforeEl = document.getElementById('before');
+      if (beforeEl) {
+        beforeEl.innerText = "beforeUpdate" + content;
+      }
     });
 
     await render(hbs`<InkMde

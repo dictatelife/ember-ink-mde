@@ -19,6 +19,7 @@
     "noEmit": true,
     "inlineSourceMap": true,
     "inlineSources": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "dummy/tests/*": ["tests/*"],
