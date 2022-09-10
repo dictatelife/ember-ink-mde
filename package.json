@@ -5,9 +5,10 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "github:malgasm/ember-ink-mde",
+  "repository": "github:dictatelife/ember-ink-mde",
   "license": "MIT",
-  "author": "",
+  "homepage": "https://github.com/dictatelife/ember-ink-mde#readme",
+  "author": "malgasm <malgasm@users.noreply.github.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
