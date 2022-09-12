@@ -1,9 +1,19 @@
-<p align="center">
-  <a href="https://github.com/malgasm/ember-ink-mde/actions?query=workflow%3ACI"><img src="https://github.com/malgasm/ember-ink-mde/workflows/CI/badge.svg" alt="CI Status"></a>
-  <a href="https://codeclimate.com/github/malgasm/ember-ink-mde"><img src="https://codeclimate.com/github/malgasm/ember-ink-mde.svg" alt="Code Climate"></a>
-  <a href="https://github.com/malgasm/ember-ink-mde/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
+ember-ink-mde
+====================================================================================
 
-</p>
+[![NPM Version][npm-badge]][npm-badge-url]
+[![CI Status][ci-badge]][ci-badge-url]
+[![Code Climate][codeclimate-badge]][codeclimate-badge-url]
+[![MIT License][license-badge]][license-badge-url]
+
+[npm-badge]: https://img.shields.io/npm/v/ember-ink-mde
+[npm-badge-url]: https://www.npmjs.com/package/ember-ink-mde
+[ci-badge]: https://github.com/malgasm/ember-ink-mde/workflows/CI/badge.svg
+[ci-badge-url]: https://github.com/malgasm/ember-ink-mde/actions?query=workflow%3ACI
+[codeclimate-badge]: https://codeclimate.com/github/malgasm/ember-ink-mde.svg
+[codeclimate-badge-url]: https://codeclimate.com/github/malgasm/ember-ink-mde
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-badge-url]: https://github.com/malgasm/ember-ink-mde/blob/master/LICENSE
 
 An [Ember.js](https://github.com/emberjs/ember.js/) addon for the [Ink Markdown Editor](https://github.com/voraciousdev/ink-mde/)
 
