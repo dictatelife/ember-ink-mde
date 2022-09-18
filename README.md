@@ -62,15 +62,38 @@ Nested options are prefixed with their top-level configuration key so they can b
 |                       | toolbarUpload             |
 
 
+
+
 Note: The plugin does not yet support configuring the `file` options. Pull requests are welcomed.
 
 ###### templates/application.hbs
 
 ```hbs
+<!-- my-component.hbs -->
+
 {{ink-mde
   doc="my awesome markdown content"
   afterUpdate=(action afterEditorUpdate)
 }}
+```
+
+The plugin also supports an `onEditorReady` function, which provides the ink `editor` object. For example,
+
+```hbs
+<!-- my-component.hbs -->
+
+{{ink-mde
+  onEditorReady=(action onEditorReady)
+}}
+```
+
+```js
+//my-component.js
+
+@action
+onEditorReady: function(editor) {
+  this.editor = editor;
+}
 ```
 
 ## Contributing
