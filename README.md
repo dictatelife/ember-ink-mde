@@ -37,6 +37,8 @@ ember install ember-ink-mde
 
 ## Usage
 
+### Ink Options
+
 The configuration options match most of the configuation from ink-mde.
 
 - doc
@@ -66,8 +68,6 @@ Nested options are prefixed with their top-level configuration key so they can b
 
 Note: The plugin does not yet support configuring the `file` options. Pull requests are welcomed.
 
-###### templates/application.hbs
-
 ```hbs
 <!-- my-component.hbs -->
 
@@ -77,13 +77,15 @@ Note: The plugin does not yet support configuring the `file` options. Pull reque
 }}
 ```
 
+### Other Options
+
 The plugin also supports an `onEditorReady` function, which provides the ink `editor` object. For example,
 
 ```hbs
 <!-- my-component.hbs -->
 
 {{ink-mde
-  onEditorReady=(action onEditorReady)
+  onEditorReady=(action 'onEditorReady')
 }}
 ```
 
@@ -91,7 +93,7 @@ The plugin also supports an `onEditorReady` function, which provides the ink `ed
 //my-component.js
 
 @action
-onEditorReady: function(editor) {
+onEditorReady(editor) {
   this.editor = editor;
 }
 ```
