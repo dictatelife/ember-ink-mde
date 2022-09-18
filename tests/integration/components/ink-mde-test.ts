@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, find, findAll, typeIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { TInkMdeEditor } from 'ember-ink-mde/components/ink-mde';
 
 const poweredText = 'powered by ink-mde';
 const inkButtonClass = '.ink-button';
@@ -55,6 +56,8 @@ module('Integration | Component | ink-mde', function (hooks) {
   });
 
   test("it calls hooks", async function (assert) {
+    let editor: TInkMdeEditor = {update: function() { return "fakeUpdateResult";}};
+
     this.set('afterUpdate', function(content : string) {
       const afterEl = document.getElementById('after');
       if (afterEl) {
@@ -62,25 +65,37 @@ module('Integration | Component | ink-mde', function (hooks) {
       }
     });
 
-    this.set('beforeUpdate', function(content : string) {
+    this.set('beforeUpdate', async function(content : string) {
       const beforeEl = document.getElementById('before');
       if (beforeEl) {
         beforeEl.innerText = "beforeUpdate" + content;
       }
     });
 
+    this.set('onEditorReady', async function(ink: TInkMdeEditor) {
+      const readyEl = document.getElementById('ready');
+      if (readyEl) {
+        readyEl.innerText = "onEditorReady";
+      }
+      editor = ink;
+    });
+
     await render(hbs`<InkMde
         @doc=" and "
         @beforeUpdate={{this.beforeUpdate}}
         @afterUpdate={{this.afterUpdate}}
+        @onEditorReady={{this.onEditorReady}}
       />
       <div id=after></div>
       <div id=before></div>
+      <div id=ready></div>
     `);
 
     await typeIn('.cm-line', 'something')
 
     assert.strictEqual(find('#before')?.textContent, "beforeUpdate and something");
     assert.strictEqual(find('#after')?.textContent, "afterUpdate and something");
+    assert.strictEqual(find('#ready')?.textContent, "onEditorReady");
+    assert.notEqual(editor.update("content"), "fakeUpdateResult");
   });
 });

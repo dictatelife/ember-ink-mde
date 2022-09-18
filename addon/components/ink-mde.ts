@@ -2,8 +2,12 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { defineOptions, ink } from 'ink-mde';
 
-interface InkMdeArgs {
-  doc?: string
+export type TInkMdeEditor = {
+  update: (content: string) => void
+}
+
+interface IInkMdeArgs {
+  doc?: string;
 
   interfaceAttribution?: boolean;
   interfaceAutocomplete?: boolean;
@@ -29,9 +33,11 @@ interface InkMdeArgs {
 
   beforeUpdate?: () => void
   afterUpdate?: () => void
+  onEditorReady?: (editor: TInkMdeEditor) => void
 }
 
-export default class InkMde extends Component<InkMdeArgs> {
+export default class InkMde extends Component<IInkMdeArgs> {
+
   #noOp() {}
 
   #booleanDefault(val: boolean | undefined, defaultValue = true) { return val == undefined ? defaultValue : val }
@@ -62,7 +68,7 @@ export default class InkMde extends Component<InkMdeArgs> {
     const toolbarUpload = this.#booleanDefault(args.toolbarUpload, false);
     const vim = this.#booleanDefault(args.vim, false);
 
-    ink(editorElement, defineOptions({
+    const inkEditor = ink(editorElement, defineOptions({
       doc: args.doc || '',
       hooks: {
         beforeUpdate: beforeUpdate,
@@ -91,6 +97,9 @@ export default class InkMde extends Component<InkMdeArgs> {
         upload: toolbarUpload
       },
       vim: vim
-    }))
+    }));
+    if (this.args.onEditorReady) {
+      this.args.onEditorReady(inkEditor);
+    }
   }
 }
