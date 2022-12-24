@@ -87,5 +87,3 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
-      - name: Print Debug
-        run: cat /home/runner/.npm/_logs/*
