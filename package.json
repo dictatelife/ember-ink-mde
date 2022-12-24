@@ -1,6 +1,6 @@
 {
   "name": "ember-ink-mde",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "an Ember.js addon for the Ink Markdown Editor",
   "keywords": [
     "ember-addon"
