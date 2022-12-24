@@ -4,7 +4,6 @@ import { render, find, findAll, typeIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { TInkMdeEditor } from 'ember-ink-mde/components/ink-mde';
 
-const poweredText = 'powered by ink-mde';
 const inkButtonClass = '.ink-button';
 
 // Set any properties with this.set('myProperty', 'value');
@@ -16,7 +15,7 @@ module('Integration | Component | ink-mde', function (hooks) {
   test("it renders the given content", async function (assert) {
     await render(hbs`<div><InkMde @doc="test" /></div>`);
 
-    assert.strictEqual(find(".cm-content")?.textContent, `test${poweredText}`);
+    assert.strictEqual(find(".cm-content")?.textContent, `test`);
     assert.strictEqual(findAll(inkButtonClass).length, 0)
   });
 

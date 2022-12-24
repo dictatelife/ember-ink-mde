@@ -9,6 +9,7 @@ on:
 
 env:
   NODE_VERSION: '16'
+  NPM_VERSION: '8.19.2'
 
 concurrency:
   group: ci-${{ github.head_ref || github.ref }}
@@ -28,7 +29,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - name: Update NPM
-        run: npm install -g npm
+        run: npm install -g npm@${{ env.NPM_VERSION }}
       - name: Install Dependencies
         run: npm ci
       - name: Lint
@@ -48,7 +49,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - name: Update NPM
-        run: npm install -g npm
+        run: npm install -g npm@${{ env.NPM_VERSION }}
       - name: Install Dependencies
         run: npm install --no-shrinkwrap
       - name: Run Tests
@@ -67,8 +68,8 @@ jobs:
           - ember-lts-3.24
           - ember-lts-3.28
           - ember-release
-          # - ember-beta
-          # - ember-canary
+          - ember-beta
+          - ember-canary
           - ember-classic
           - embroider-safe
           - embroider-optimized
@@ -81,7 +82,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - name: Update NPM
-        run: npm install -g npm
+        run: npm install -g npm@${{ env.NPM_VERSION }}
       - name: Install Dependencies
         run: npm ci
       - name: Run Tests
