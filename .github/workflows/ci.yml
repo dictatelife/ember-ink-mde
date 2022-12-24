@@ -67,8 +67,8 @@ jobs:
           - ember-lts-3.24
           - ember-lts-3.28
           - ember-release
-          # - ember-beta
-          # - ember-canary
+          - ember-beta
+          - ember-canary
           - ember-classic
           - embroider-safe
           - embroider-optimized
@@ -86,3 +86,5 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+      - name: Print Debug
+        run: cat /home/runner/.npm/_logs/*
