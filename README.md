@@ -1,4 +1,4 @@
-ember-ink-mde
+ember-ink-mde (No longer maintained)
 ====================================================================================
 
 [![NPM Version][npm-badge]][npm-badge-url]
